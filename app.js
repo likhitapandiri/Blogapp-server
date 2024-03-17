@@ -216,9 +216,12 @@ app.post('/logout', (req, res) => {
 //         hello: "hello"
 //     });
 // })
-app.listen(8080, () => {
-    console.log("server is running");
+// app.listen(8080, () => {
+//     console.log("server is running");
+// });
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
-
-
 //ZdrpX441cAF721F6
