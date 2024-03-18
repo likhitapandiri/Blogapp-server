@@ -32,6 +32,9 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+app.get('/', (req, res) => {
+  res.send('Hello, world!');
+});
 
 app.post('/register', async (req, res) => {
     const { username, password } = req.body;
