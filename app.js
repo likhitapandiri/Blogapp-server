@@ -19,7 +19,7 @@ const secret = 'wiughhhhhhhhhhhhhhhha67q7qtys';
 app.use(express.json());//middleware for parsing data got from put or post method from clients in terms of json
 app.use(cookieParser());
 //app.use(cors({credentials:true,origin:'http://localhost:3000'}));
-const allowedOrigins = ['http://localhost:3000', 'https://blog-application1234.netlify.app'];
+const allowedOrigins = ['http://localhost:3000', 'https://blog-application123.netlify.app'];
 
 app.use(cors({
   credentials: true,
