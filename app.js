@@ -18,7 +18,19 @@ const salt = bcrypt.genSaltSync(10); //to hash the password the more the number 
 const secret = 'wiughhhhhhhhhhhhhhhha67q7qtys';
 app.use(express.json());//middleware for parsing data got from put or post method from clients in terms of json
 app.use(cookieParser());
-app.use(cors({credentials:true,origin:'http://localhost:3000'}));
+//app.use(cors({credentials:true,origin:'http://localhost:3000'}));
+const allowedOrigins = ['http://localhost:3000', 'https://blog-application1234.netlify.app'];
+
+app.use(cors({
+  credentials: true,
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Your CORS policy does not allow this origin.'));
+    }
+  }
+}));
 app.use(morgan('tiny'));
 //blogapp-likhita
 //1sTBAmodUo7Q5Inc
